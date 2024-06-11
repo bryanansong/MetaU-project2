@@ -11,32 +11,24 @@ const SearchScreen = () => {
   // TODO: Implement the sorting functionality
   const [sortType, setSortType] = useState("none");
 
-  const getFilteredResults = (list) => {
-    const types = {
-      none: "none",
-      popularity: "popularity",
-      date: "release_date",
-      vote_average: "vote_average",
-      title_asc: "title",
-      title_desc: "reverse",
-    };
-
-    const sortProperty = types[sortType];
-
-    if (!list) {
-      return [];
-    } else if (sortProperty === "none") {
-      return list;
+  const getSortedResults = (list) => {
+    if (!list) return [];
+    switch (sortType) {
+      case "title_asc":
+        return [...list].sort((a, b) => a.title.localeCompare(b.title));
+      case "title_desc":
+        return [...list].sort((a, b) => b.title.localeCompare(a.title));
+      case "popularity":
+        return [...list].sort((a, b) => b.popularity - a.popularity);
+      case "date":
+        return [...list].sort(
+          (a, b) => new Date(b.release_date) - new Date(a.release_date)
+        );
+      case "vote_average":
+        return [...list].sort((a, b) => b.vote_average - a.vote_average);
+      default:
+        return list;
     }
-    return [...list].sort((a, b) => {
-      if (sortProperty === "reverse") {
-        return b.title.localeCompare(a.title);
-      } else if (sortProperty === "title") {
-        return a.title.localeCompare(b.title);
-      } else {
-        return b[sortProperty] - a[sortProperty];
-      }
-    });
   };
 
   const getSearchResults = (more = false) => {
