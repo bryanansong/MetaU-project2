@@ -6,6 +6,15 @@
   width: 100%;
 }
 
+.content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 30px;
+  background-color: #786161;
+}
+
 @media (max-width: 600px) {
   .movie-card {
     width: 100%;
