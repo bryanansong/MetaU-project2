@@ -48,23 +48,29 @@ const SearchScreen = () => {
       options
     )
       .then((response) => response.json())
-      .then((response) =>
+      .then((response) => {
+        const sortedResults = getSortedResults(response.results);
         setSearchResults(
-          more ? [...searchResults, ...response.results] : [...response.results]
-        )
-      )
+          more ? [...searchResults, ...sortedResults] : sortedResults
+        );
+      })
       .catch((err) => console.error(err));
   };
 
   const loadMore = () => {
     getSearchResults(true);
+    setSortType("none");
     setLastPageNumber(lastPageNumber + 1);
   };
 
   useEffect(() => {
     setLastPageNumber(0);
     getSearchResults();
-  }, [searchQuery, sortType]);
+  }, [searchQuery]);
+
+  useEffect(() => {
+    setSearchResults(getSortedResults(searchResults));
+  }, [sortType]);
 
   return (
     <div>
