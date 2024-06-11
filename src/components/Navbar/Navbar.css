@@ -5,6 +5,23 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-around;
   color: white;
+}
+
+.toggle-button {
+  background-color: green;
+  padding: 8px 25px;
+  border-radius: 9px;
+  min-width: 130px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.toggle-button:hover {
+  background-color: green;
+  padding: 8px 25px;
+  border-radius: 9px;
+  cursor: pointer;
 }
