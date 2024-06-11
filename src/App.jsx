@@ -32,7 +32,7 @@ const App = () => {
       <Navbar />
       <div className="content">
         <FilterOptions />
-        <MoviesList movies={moviesList} />
+        <MoviesList moviesList={moviesList} />
       </div>
       <Footer />
     </div>

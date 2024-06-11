@@ -1,0 +1,20 @@
+.container {
+  width: 100%;
+}
+
+.moviesList {
+  display: flex;
+  width: 95%;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.loadMore {
+  margin-bottom: 70px;
+  background-color: #282c3488;
+  margin-top: 50px;
+  padding: 3px 30px;
+  border-radius: 5px;
+  color: white;
+}
