@@ -7,8 +7,6 @@ const SearchScreen = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [lastPageNumber, setLastPageNumber] = useState(0);
   const [searchResults, setSearchResults] = useState([]);
-
-  // TODO: Implement the sorting functionality
   const [sortType, setSortType] = useState("none");
 
   const getSortedResults = (list) => {

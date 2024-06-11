@@ -1,10 +1,12 @@
 import "./NowPlayingScreen.css";
 import MoviesList from "../../components/MoviesList/MoviesList";
 import { useEffect, useState } from "react";
+import FilterOptions from "../../components/FilterOptions/FilterOptions";
 
 const NowPlayingScreen = () => {
   const [moviesList, setMoviesList] = useState([]);
   const [lastPageNumber, setLastPageNumber] = useState(1);
+  const [sortType, setSortType] = useState("none");
 
   const fetchMovieInformation = (pageNumber = 1) => {
     const options = {
@@ -25,6 +27,26 @@ const NowPlayingScreen = () => {
       .catch((err) => console.error(err));
   };
 
+  const getSortedResults = (list) => {
+    if (!list) return [];
+    switch (sortType) {
+      case "title_asc":
+        return [...list].sort((a, b) => a.title.localeCompare(b.title));
+      case "title_desc":
+        return [...list].sort((a, b) => b.title.localeCompare(a.title));
+      case "popularity":
+        return [...list].sort((a, b) => b.popularity - a.popularity);
+      case "date":
+        return [...list].sort(
+          (a, b) => new Date(b.release_date) - new Date(a.release_date)
+        );
+      case "vote_average":
+        return [...list].sort((a, b) => b.vote_average - a.vote_average);
+      default:
+        return list;
+    }
+  };
+
   const loadMore = () => {
     fetchMovieInformation(lastPageNumber + 1);
     setLastPageNumber(lastPageNumber + 1);
@@ -34,9 +56,14 @@ const NowPlayingScreen = () => {
     fetchMovieInformation();
   }, []);
 
+  useEffect(() => {
+    setMoviesList(getSortedResults(moviesList));
+  }, [sortType]);
+
   return (
     <div className="nowPlaying">
       <h1>NOW PLAYING</h1>
+      <FilterOptions setSortType={setSortType} />
       <MoviesList moviesList={moviesList} loadMore={loadMore} />
     </div>
   );
