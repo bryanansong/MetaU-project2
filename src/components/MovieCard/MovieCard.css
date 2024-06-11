@@ -1,13 +1,35 @@
 .card {
-  border: 1px black solid;
   border-radius: 5px;
-  width: 200px;
+  width: 260px;
   overflow: hidden;
+  background-color: white;
+}
+
+.card:hover {
+  cursor: pointer;
 }
 
 .movieCover {
   width: 100%;
 }
 
+.movieText {
+  padding: 10px 15px;
+}
+
 .movieTitle {
+  font-weight: 200;
+  letter-spacing: 2px;
+}
+
+.rating-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 100;
+  color: rgba(79, 78, 78, 0.739);
+}
+
+.rating-star {
+  display: flex;
 }
