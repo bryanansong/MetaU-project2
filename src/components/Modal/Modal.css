@@ -1,0 +1,21 @@
+.modal-container {
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background: hsl(0 0% 0% / 50%);
+  backdrop-filter: blur(7px);
+}
+
+.modal-content {
+  position: relative;
+  width: 60vw;
+  height: 60vh;
+  border-radius: 7px;
+  background-color: green;
+}
