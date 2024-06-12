@@ -5,16 +5,24 @@ const MovieCard = ({ movie }) => {
   return (
     <div className="card">
       <img
-        src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
+        src={
+          movie?.poster_path
+            ? `https://image.tmdb.org/t/p/w500/${movie.poster_path}`
+            : "https://placehold.co/260x390?text=No+Cover+Art&font=montserrat"
+        }
         className="movieCover"
-        alt=""
+        alt="Movie Cover Art"
       />
       <div className="movieText">
-        <h2 className="movieTitle">{movie.title}</h2>
+        <h2 className="movieTitle">
+          {movie.title ? movie.title : "No Title Found"}
+        </h2>
         <div className="rating-container">
-          <p>Rating: {movie.vote_average} </p>
+          <p>
+            Rating:{" "}
+            {movie.vote_average ? movie.vote_average : "No Rating Found"}
+          </p>
           <div className="rating-star">
-            {/* biome-ignore lint/a11y/noSvgWithoutTitle: <explanation> */}
             <svg
               alt="A gold star icon"
               width="22"
