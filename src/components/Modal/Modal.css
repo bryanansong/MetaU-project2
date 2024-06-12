@@ -14,8 +14,59 @@
 
 .modal-content {
   position: relative;
-  width: 60vw;
-  height: 60vh;
+  width: 65vw;
+  height: 70vh;
   border-radius: 7px;
-  background-color: green;
+  background-color: black;
+  overflow: hidden;
+  overflow-y: scroll;
+  border: 3px white solid;
+}
+
+.modal-movie-background {
+  display: flex;
+  flex: 1;
+  width: 100%;
+  z-index:1;
+}
+
+.modal-movie-background img {
+  width:100%;
+}
+
+.modal-movie-cover {
+  position: relative;
+  z-index: 4;
+}
+
+.modal-movie-cover > img {
+  position: absolute;
+  border-radius: 4px;
+  width: 300px;
+  top: -450px;
+  left: 20px;
+  border: 3px white solid;
+}
+
+.modal-movie-content {
+  position: absolute;
+  z-index: 3;
+  bottom: 0;
+  height: 60%;
+  padding: 0px 30px 10px 340px;
+  border-top: 3px white solid;
+  background-color: black;
+  color: white;
+  width: fit-content;
+}
+
+.modal-movie-title {
+  font-size: 3rem;
+  font-weight: 200;
+  letter-spacing: 2px;
+  max-width: 75%;
+}
+
+.modal-movie-overview {
+  /* background-color: red; */
 }

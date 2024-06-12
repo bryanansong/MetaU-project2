@@ -23,7 +23,7 @@ const App = () => {
 
   return (
     <div className="App">
-      {isModalVisible && <Modal closeModal={closeModal} isVisible={isModalVisible} modalData={modalData} />}
+      {isModalVisible && <Modal closeModal={closeModal} isVisible={isModalVisible} movie={modalData} />}
       <Navbar isSearching={isSearching} setIsSearching={setIsSearching} />
       <div className="content">
         {isSearching ? <SearchScreen openModal={openModal} /> : <NowPlayingScreen openModal={openModal} />}
