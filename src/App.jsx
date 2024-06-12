@@ -21,12 +21,20 @@ const App = () => {
     setModalData({});
   }
 
+  const addMovieAttributes = (moviesList) => {
+    return moviesList.map((item) => ({
+      ...item,
+      watched: false,
+      liked: false,
+    }));
+  };
+
   return (
     <div className="App">
       {isModalVisible && <Modal closeModal={closeModal} isVisible={isModalVisible} movie={modalData} />}
       <Navbar isSearching={isSearching} setIsSearching={setIsSearching} />
       <div className="content">
-        {isSearching ? <SearchScreen openModal={openModal} /> : <NowPlayingScreen openModal={openModal} />}
+        {isSearching ? <SearchScreen openModal={openModal} addMovieAttributes={addMovieAttributes}/> : <NowPlayingScreen openModal={openModal} addMovieAttributes={addMovieAttributes} />}
       </div>
       <Footer />
     </div>

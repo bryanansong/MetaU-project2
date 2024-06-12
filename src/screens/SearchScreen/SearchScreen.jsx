@@ -3,7 +3,7 @@ import "./SearchScreen.css";
 import FilterOptions from "../../components/FilterOptions/FilterOptions";
 import MoviesList from "../../components/MoviesList/MoviesList";
 
-const SearchScreen = ({openModal}) => {
+const SearchScreen = ({openModal, addMovieAttributes}) => {
   const [searchQuery, setSearchQuery] = useState("");
   const [lastPageNumber, setLastPageNumber] = useState(0);
   const [searchResults, setSearchResults] = useState([]);
@@ -46,12 +46,9 @@ const SearchScreen = ({openModal}) => {
       options
     )
       .then((response) => response.json())
-      .then((response) => {
-        const sortedResults = getSortedResults(response.results);
-        setSearchResults(
-          more ? [...searchResults, ...sortedResults] : sortedResults
-        );
-      })
+      .then((response) => getSortedResults(response.results))
+      .then((response) => addMovieAttributes(response))
+      .then((response) => setSearchResults(more ? [...searchResults, ...response] : response))
       .catch((err) => console.error(err));
   };
 
