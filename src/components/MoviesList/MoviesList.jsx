@@ -1,14 +1,12 @@
-/* eslint-disable react/prop-types */
-import { useEffect, useState } from "react";
 import MovieCard from "../MovieCard/MovieCard";
 import "./MoviesList.css";
 
-const MoviesList = ({ moviesList, loadMore }) => {
+const MoviesList = ({ openModal, moviesList, loadMore }) => {
   return (
     <>
       <div className="moviesList">
         {moviesList.map((movie, index) => (
-          <MovieCard key={index} movie={movie} />
+          <MovieCard key={index} movie={movie} openModal={openModal} />
         ))}
       </div>
       <div className="loadMore" onClick={loadMore}>

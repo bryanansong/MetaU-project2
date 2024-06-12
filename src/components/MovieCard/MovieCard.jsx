@@ -1,9 +1,9 @@
 /* eslint-disable react/prop-types */
 import "./MovieCard.css";
 
-const MovieCard = ({ movie }) => {
+const MovieCard = ({ movie, openModal }) => {
   return (
-    <div className="card">
+    <div className="card" onClick={() => openModal(movie)}>
       <img
         src={
           movie?.poster_path

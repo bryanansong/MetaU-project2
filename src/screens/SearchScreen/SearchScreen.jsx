@@ -3,7 +3,7 @@ import "./SearchScreen.css";
 import FilterOptions from "../../components/FilterOptions/FilterOptions";
 import MoviesList from "../../components/MoviesList/MoviesList";
 
-const SearchScreen = () => {
+const SearchScreen = ({openModal}) => {
   const [searchQuery, setSearchQuery] = useState("");
   const [lastPageNumber, setLastPageNumber] = useState(0);
   const [searchResults, setSearchResults] = useState([]);
@@ -79,7 +79,7 @@ const SearchScreen = () => {
       {searchResults.length <= 0 ? (
         <h1 className="no-results">No Results for your Search</h1>
       ) : (
-        <MoviesList moviesList={searchResults} loadMore={loadMore} />
+        <MoviesList openModal={openModal} moviesList={searchResults} loadMore={loadMore} />
       )}
     </div>
   );
