@@ -62,7 +62,7 @@ const NowPlayingScreen = ({openModal}) => {
 
   return (
     <div className="nowPlaying">
-      <h1>NOW PLAYING</h1>
+      <h1 className="nowPlaying-title">NOW PLAYING</h1>
       <FilterOptions setSortType={setSortType} />
       <MoviesList openModal={openModal} moviesList={moviesList} loadMore={loadMore} />
     </div>

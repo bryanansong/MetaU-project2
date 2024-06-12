@@ -76,10 +76,18 @@ const SearchScreen = ({openModal}) => {
         setSearchQuery={setSearchQuery}
         setSortType={setSortType}
       />
-      {searchResults.length <= 0 ? (
-        <h1 className="no-results">No Results for your Search</h1>
+      {searchQuery.length <= 0 ? (
+        <h1 className="searchScreen-title">Try Searching for A Movie!</h1>
+
       ) : (
-        <MoviesList openModal={openModal} moviesList={searchResults} loadMore={loadMore} />
+        <>
+          {searchResults.length <= 0 ? (
+            <h1 className="searchScreen-title">No Results for your Search</h1>
+          ) : (
+            <MoviesList openModal={openModal} moviesList={searchResults} loadMore={loadMore} />
+          )}
+        </>
+
       )}
     </div>
   );
