@@ -26,7 +26,7 @@ const App = () => {
       {isModalVisible && <Modal closeModal={closeModal} isVisible={isModalVisible} modalData={modalData} />}
       <Navbar isSearching={isSearching} setIsSearching={setIsSearching} />
       <div className="content">
-        {isSearching ? <SearchScreen openModal={openModal} /> : <NowPlayingScreen />}
+        {isSearching ? <SearchScreen openModal={openModal} /> : <NowPlayingScreen openModal={openModal} />}
       </div>
       <Footer />
     </div>
