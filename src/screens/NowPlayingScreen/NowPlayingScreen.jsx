@@ -3,7 +3,7 @@ import MoviesList from "../../components/MoviesList/MoviesList";
 import { useEffect, useState } from "react";
 import FilterOptions from "../../components/FilterOptions/FilterOptions";
 
-const NowPlayingScreen = () => {
+const NowPlayingScreen = ({openModal}) => {
   const [moviesList, setMoviesList] = useState([]);
   const [lastPageNumber, setLastPageNumber] = useState(1);
   const [sortType, setSortType] = useState("none");
@@ -64,7 +64,7 @@ const NowPlayingScreen = () => {
     <div className="nowPlaying">
       <h1>NOW PLAYING</h1>
       <FilterOptions setSortType={setSortType} />
-      <MoviesList moviesList={moviesList} loadMore={loadMore} />
+      <MoviesList openModal={openModal} moviesList={moviesList} loadMore={loadMore} />
     </div>
   );
 };

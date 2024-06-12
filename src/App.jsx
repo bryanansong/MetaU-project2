@@ -7,8 +7,8 @@ import NowPlayingScreen from "./screens/NowPlayingScreen/NowPlayingScreen";
 import Modal from "./components/Modal/Modal";
 
 const App = () => {
-  const [isSearching, setIsSearching] = useState(true);
-  const [isModalVisible, setIsModaVisible] = useState(true);
+  const [isSearching, setIsSearching] = useState(false);
+  const [isModalVisible, setIsModaVisible] = useState(false);
   const [modalData, setModalData] = useState({});
 
   const openModal = (movieInformation) => {
@@ -26,7 +26,7 @@ const App = () => {
       {isModalVisible && <Modal closeModal={closeModal} isVisible={isModalVisible} modalData={modalData} />}
       <Navbar isSearching={isSearching} setIsSearching={setIsSearching} />
       <div className="content">
-        {isSearching ? <SearchScreen openModal={openModal} /> : <NowPlayingScreen />}
+        {isSearching ? <SearchScreen openModal={openModal} /> : <NowPlayingScreen openModal={openModal} />}
       </div>
       <Footer />
     </div>
