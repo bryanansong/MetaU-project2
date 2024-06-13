@@ -3,7 +3,7 @@ import "./SearchScreen.css";
 import FilterOptions from "../../components/FilterOptions/FilterOptions";
 import MoviesList from "../../components/MoviesList/MoviesList";
 
-const SearchScreen = ({openModal, addMovieAttributes}) => {
+const SearchScreen = ({ openModal, addMovieAttributes }) => {
   const [searchQuery, setSearchQuery] = useState("");
   const [lastPageNumber, setLastPageNumber] = useState(0);
   const [searchResults, setSearchResults] = useState([]);
@@ -48,7 +48,9 @@ const SearchScreen = ({openModal, addMovieAttributes}) => {
       .then((response) => response.json())
       .then((response) => getSortedResults(response.results))
       .then((response) => addMovieAttributes(response))
-      .then((response) => setSearchResults(more ? [...searchResults, ...response] : response))
+      .then((response) =>
+        setSearchResults(more ? [...searchResults, ...response] : response)
+      )
       .catch((err) => console.error(err));
   };
 
@@ -68,23 +70,25 @@ const SearchScreen = ({openModal, addMovieAttributes}) => {
   }, [sortType]);
 
   return (
-    <div>
+    <div className="searchScreen-container">
       <FilterOptions
         setSearchQuery={setSearchQuery}
         setSortType={setSortType}
       />
       {searchQuery.length <= 0 ? (
         <h1 className="searchScreen-title">Try Searching for A Movie!</h1>
-
       ) : (
         <>
           {searchResults.length <= 0 ? (
             <h1 className="searchScreen-title">No Results for your Search</h1>
           ) : (
-            <MoviesList openModal={openModal} moviesList={searchResults} loadMore={loadMore} />
+            <MoviesList
+              openModal={openModal}
+              moviesList={searchResults}
+              loadMore={loadMore}
+            />
           )}
         </>
-
       )}
     </div>
   );

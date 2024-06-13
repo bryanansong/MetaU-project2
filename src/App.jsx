@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar/Navbar";
 import SearchScreen from "./screens/SearchScreen/SearchScreen";
 import NowPlayingScreen from "./screens/NowPlayingScreen/NowPlayingScreen";
 import Modal from "./components/Modal/Modal";
+import Sidebar from "./components/Sidebar/Sidebar";
 
 const App = () => {
   const [isSearching, setIsSearching] = useState(false);
@@ -12,6 +13,7 @@ const App = () => {
   const [modalData, setModalData] = useState({});
   const [likedMovies, setLikedMovies] = useState([]);
   const [watchedMovies, setWatchedMovies] = useState([]);
+  const [sidebarOpened, setSidebarOpened] = useState(true);
 
   const openModal = (movieInformation) => {
     setIsModaVisible(true);
@@ -38,6 +40,12 @@ const App = () => {
 
   return (
     <div className="App">
+      <Sidebar
+        likedMovies={likedMovies}
+        watchedMovies={watchedMovies}
+        sidebarOpened={sidebarOpened}
+        setSidebarOpened={setSidebarOpened}
+      />
       {isModalVisible && (
         <Modal
           closeModal={closeModal}
@@ -49,7 +57,11 @@ const App = () => {
           setWatchedMovies={setWatchedMovies}
         />
       )}
-      <Navbar isSearching={isSearching} setIsSearching={setIsSearching} />
+      <Navbar
+        isSearching={isSearching}
+        setIsSearching={setIsSearching}
+        setSidebarOpened={setSidebarOpened}
+      />
       <div className="content">
         {isSearching ? (
           <SearchScreen

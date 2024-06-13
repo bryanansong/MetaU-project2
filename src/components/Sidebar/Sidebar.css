@@ -1,0 +1,36 @@
+.sidebar-container > * {
+  transition: all 0.5s ease;
+}
+
+.sidebar-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  transition: all 0.5s ease;
+}
+
+.container-opened {
+  backdrop-filter: blur(5px);
+  background-color: rgb(0, 0, 0, 0.5);
+}
+.container-closed {
+  display: none;
+}
+
+.sidebar-content {
+  position: absolute;
+  width: 50vw;
+  left: -50vw;
+  height: 100vh;
+  background-color: red;
+  transition: all 0.5s ease;
+}
+
+.content-opened {
+  left: 0vw;
+  transition: all 0.5s ease;
+}
