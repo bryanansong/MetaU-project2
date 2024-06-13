@@ -10,6 +10,8 @@ const App = () => {
   const [isSearching, setIsSearching] = useState(false);
   const [isModalVisible, setIsModaVisible] = useState(false);
   const [modalData, setModalData] = useState({});
+  const [likedMovies, setLikedMovies] = useState([]); // Stores a list of ID'S
+  const [watchedMovies, setWatchedMovies] = useState([]); // Stores a list of ID'S
 
   const openModal = (movieInformation) => {
     setIsModaVisible(true);
@@ -31,7 +33,7 @@ const App = () => {
 
   return (
     <div className="App">
-      {isModalVisible && <Modal closeModal={closeModal} isVisible={isModalVisible} movie={modalData} updateMovie={setModalData} />}
+      {isModalVisible && <Modal closeModal={closeModal} isVisible={isModalVisible} movie={modalData} updateModalMovie={setModalData} setLikedMovies={setLikedMovies} setWatchedMovies={setWatchedMovies}/>}
       <Navbar isSearching={isSearching} setIsSearching={setIsSearching} />
       <div className="content">
         {isSearching ? <SearchScreen openModal={openModal} addMovieAttributes={addMovieAttributes}/> : <NowPlayingScreen openModal={openModal} addMovieAttributes={addMovieAttributes} />}
