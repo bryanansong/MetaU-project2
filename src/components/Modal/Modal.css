@@ -27,11 +27,11 @@
   display: flex;
   flex: 1;
   width: 100%;
-  z-index:1;
+  z-index: 1;
 }
 
 .modal-movie-background img {
-  width:100%;
+  width: 100%;
 }
 
 .modal-movie-cover {
@@ -57,10 +57,10 @@
   border: 3px white solid;
 }
 
-.modal-watched-buttons > *:hover{
+.modal-watched-buttons > *:hover {
   cursor: pointer;
 }
-.modal-toggle-watch-btn{
+.modal-toggle-watch-btn {
   background-color: rgb(216, 189, 57);
   /* margin-top: 2px; */
   width: 70%;
@@ -76,7 +76,7 @@
   color: rgb(216, 189, 57);
 }
 
-.modal-toggle-like-btn{
+.modal-toggle-like-btn {
   background-color: #ac3030;
   /* margin-top: 2px; */
   width: 70%;
@@ -113,5 +113,10 @@
 
 .modal-movie-overview {
   /* background-color: red; */
-  padding-bottom: 30px;
+}
+
+.modal-movie-trailer {
+  width: 720px;
+  height: 405px;
+  margin-bottom: 30px;
 }
