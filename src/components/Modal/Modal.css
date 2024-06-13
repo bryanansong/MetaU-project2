@@ -35,17 +35,61 @@
 }
 
 .modal-movie-cover {
-  position: relative;
+  position: absolute;
+  bottom: 10px;
   z-index: 4;
+  left: 20px;
+  gap: 10px;
+
+  /* STYLES FOR POSITIONING BUTTON */
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  align-items: center;
+  color: white;
 }
 
 .modal-movie-cover > img {
-  position: absolute;
   border-radius: 4px;
-  width: 300px;
-  top: -450px;
-  left: 20px;
+  width: 100%;
+  height: auto;
+  top: -470px;
   border: 3px white solid;
+}
+
+.modal-watched-buttons > *:hover{
+  cursor: pointer;
+}
+.modal-toggle-watch-btn{
+  background-color: rgb(216, 189, 57);
+  /* margin-top: 2px; */
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  border: 2px rgba(0, 0, 0, 0) solid;
+  /* max-height: 30px; */
+}
+
+.watched {
+  background-color: rgb(216, 189, 57, 0);
+  border: 2px rgb(216, 189, 57) solid;
+  color: rgb(216, 189, 57);
+}
+
+.modal-toggle-like-btn{
+  background-color: #ac3030;
+  /* margin-top: 2px; */
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  border: 2px rgba(0, 0, 0, 0) solid;
+  /* max-height: 30px; */
+}
+
+.liked {
+  background-color: rgba(0, 0, 0, 0);
+  border: 2px #ac3030 solid;
+  color: #ac3030;
 }
 
 .modal-movie-content {
@@ -69,4 +113,5 @@
 
 .modal-movie-overview {
   /* background-color: red; */
+  padding-bottom: 30px;
 }
