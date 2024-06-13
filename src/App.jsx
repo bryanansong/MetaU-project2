@@ -21,7 +21,7 @@ const App = () => {
   const closeModal = () => {
     setIsModaVisible(false);
     setModalData({});
-  }
+  };
 
   const addMovieAttributes = (moviesList) => {
     return moviesList.map((movie) => {
@@ -38,11 +38,30 @@ const App = () => {
 
   return (
     <div className="App">
-      {isModalVisible && <Modal closeModal={closeModal} movie={modalData} updateModalMovie={setModalData} likedMovies={likedMovies} setLikedMovies={setLikedMovies} watchedMovies={watchedMovies} setWatchedMovies={setWatchedMovies}/>}
+      {isModalVisible && (
+        <Modal
+          closeModal={closeModal}
+          movie={modalData}
+          updateModalMovie={setModalData}
+          likedMovies={likedMovies}
+          setLikedMovies={setLikedMovies}
+          watchedMovies={watchedMovies}
+          setWatchedMovies={setWatchedMovies}
+        />
+      )}
       <Navbar isSearching={isSearching} setIsSearching={setIsSearching} />
       <div className="content">
-        {isSearching ? <SearchScreen openModal={openModal} addMovieAttributes={addMovieAttributes}/> :
-        <NowPlayingScreen openModal={openModal} addMovieAttributes={addMovieAttributes} />}
+        {isSearching ? (
+          <SearchScreen
+            openModal={openModal}
+            addMovieAttributes={addMovieAttributes}
+          />
+        ) : (
+          <NowPlayingScreen
+            openModal={openModal}
+            addMovieAttributes={addMovieAttributes}
+          />
+        )}
       </div>
       <Footer />
     </div>
