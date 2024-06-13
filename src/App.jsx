@@ -10,8 +10,8 @@ const App = () => {
   const [isSearching, setIsSearching] = useState(false);
   const [isModalVisible, setIsModaVisible] = useState(false);
   const [modalData, setModalData] = useState({});
-  const [likedMovies, setLikedMovies] = useState([]); // Stores a list of ID'S
-  const [watchedMovies, setWatchedMovies] = useState([]); // Stores a list of ID'S
+  const [likedMovies, setLikedMovies] = useState([]);
+  const [watchedMovies, setWatchedMovies] = useState([]);
 
   const openModal = (movieInformation) => {
     setIsModaVisible(true);
@@ -24,19 +24,25 @@ const App = () => {
   }
 
   const addMovieAttributes = (moviesList) => {
-    return moviesList.map((item) => ({
-      ...item,
-      watched: false,
-      liked: false,
-    }));
+    return moviesList.map((movie) => {
+      const isLiked = likedMovies.includes(movie.id);
+      const isWatched = watchedMovies.includes(movie.id);
+
+      return {
+        ...movie,
+        liked: isLiked ? true : false,
+        watched: isWatched ? true : false,
+      };
+    });
   };
 
   return (
     <div className="App">
-      {isModalVisible && <Modal closeModal={closeModal} isVisible={isModalVisible} movie={modalData} updateModalMovie={setModalData} setLikedMovies={setLikedMovies} setWatchedMovies={setWatchedMovies}/>}
+      {isModalVisible && <Modal closeModal={closeModal} movie={modalData} updateModalMovie={setModalData} likedMovies={likedMovies} setLikedMovies={setLikedMovies} watchedMovies={watchedMovies} setWatchedMovies={setWatchedMovies}/>}
       <Navbar isSearching={isSearching} setIsSearching={setIsSearching} />
       <div className="content">
-        {isSearching ? <SearchScreen openModal={openModal} addMovieAttributes={addMovieAttributes}/> : <NowPlayingScreen openModal={openModal} addMovieAttributes={addMovieAttributes} />}
+        {isSearching ? <SearchScreen openModal={openModal} addMovieAttributes={addMovieAttributes}/> :
+        <NowPlayingScreen openModal={openModal} addMovieAttributes={addMovieAttributes} />}
       </div>
       <Footer />
     </div>

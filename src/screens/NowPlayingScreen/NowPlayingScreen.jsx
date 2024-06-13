@@ -3,7 +3,7 @@ import MoviesList from "../../components/MoviesList/MoviesList";
 import { useEffect, useState } from "react";
 import FilterOptions from "../../components/FilterOptions/FilterOptions";
 
-const NowPlayingScreen = ({openModal, addMovieAttributes, likedMovies, watchedMovies}) => {
+const NowPlayingScreen = ({openModal, addMovieAttributes}) => {
   const [moviesList, setMoviesList] = useState([]);
   const [lastPageNumber, setLastPageNumber] = useState(1);
   const [sortType, setSortType] = useState("none");
