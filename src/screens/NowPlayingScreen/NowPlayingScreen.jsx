@@ -3,7 +3,7 @@ import MoviesList from "../../components/MoviesList/MoviesList";
 import { useEffect, useState } from "react";
 import FilterOptions from "../../components/FilterOptions/FilterOptions";
 
-const NowPlayingScreen = ({openModal}) => {
+const NowPlayingScreen = ({openModal, addMovieAttributes, likedMovies, watchedMovies}) => {
   const [moviesList, setMoviesList] = useState([]);
   const [lastPageNumber, setLastPageNumber] = useState(1);
   const [sortType, setSortType] = useState("none");
@@ -23,7 +23,8 @@ const NowPlayingScreen = ({openModal}) => {
       options
     )
       .then((response) => response.json())
-      .then((response) => setMoviesList([...moviesList, ...response.results]))
+      .then((response) => addMovieAttributes(response.results))
+      .then((response) => setMoviesList([...moviesList, ...response]))
       .catch((err) => console.error(err));
   };
 
