@@ -7,6 +7,7 @@
 .nowPlaying-title {
   font-size: 5rem;
   font-weight: 300;
+  margin-bottom: 10px;
   text-align: center;
   text-wrap: wrap;
 }

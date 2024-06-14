@@ -30,6 +30,8 @@
 
 .sidebar-content {
   position: absolute;
+  display: flex;
+  flex-direction: column;
   width: 50vw;
   left: -50vw;
   height: 100vh;
@@ -40,4 +42,42 @@
 .content-opened {
   left: 0vw;
   transition: all 0.5s ease;
+}
+
+.sidebar-close {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+}
+
+.sidebar-close-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+  background-color: #0272dc;
+  height: 40px;
+  border-radius: 10px;
+  color: white;
+}
+
+.sidebar-close-button:hover {
+  box-shadow: 0px 0px 0px 5px #61a4e3 inset;
+  background-color: #0084ff71;
+  cursor: pointer;
+}
+
+.liked-movies,
+.watched-movies {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.liked-movies {
+  /* background-color: purple; */
+}
+.watched-movies {
+  /* background-color: green; */
 }

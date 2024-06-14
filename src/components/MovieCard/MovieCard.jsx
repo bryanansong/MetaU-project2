@@ -18,10 +18,6 @@ const MovieCard = ({ movie, openModal }) => {
           {movie.title ? movie.title : "No Title Found"}
         </h2>
         <div className="rating-container">
-          <p>
-            Rating:{" "}
-            {movie.vote_average ? movie.vote_average : "No Rating Found"}
-          </p>
           <div className="rating-star">
             <svg
               alt="A gold star icon"
@@ -39,6 +35,11 @@ const MovieCard = ({ movie, openModal }) => {
               />
             </svg>
           </div>
+          <p>
+            {movie?.vote_average
+              ? Math.round(movie.vote_average * 10) / 10
+              : "No Rating Found"}
+          </p>
         </div>
       </div>
     </div>
