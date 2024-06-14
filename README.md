@@ -2,11 +2,11 @@
 
 ## Unit 3 Assignment: Flixster
 
-Submitted by: **NAME**
+Submitted by: **Bryan Ansong**
 
-Estimated time spent: **#** hours spent in total
+Estimated time spent: **20** hours spent in total
 
-Deployed Application (optional): [Flixster Deployed Site](ADD_LINK_HERE)
+Deployed Application (optional): [Flixster Deployed Site](https://flixster-qawi.onrender.com/)
 
 ### Application Features
 
@@ -46,9 +46,7 @@ Deployed Application (optional): [Flixster Deployed Site](ADD_LINK_HERE)
 
 ### Walkthrough Video
 
-`TODO://` Add the embedded URL code to your animated app walkthrough below, `ADD_EMBEDDED_CODE_HERE`. Make sure the video or gif actually renders and animates when viewing this README. (🚫 Remove this paragraph after adding walkthrough video)
-
-`ADD_EMBEDDED_CODE_HERE`
+Video of features: [Loom Link](https://www.loom.com/share/9c84db07b4f44e78807bb6870eddc92d?sid=542d06f3-15a1-4fc5-830c-4c57b548d226)
 
 ### Reflection
 
