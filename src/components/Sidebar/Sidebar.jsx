@@ -6,6 +6,7 @@ const Sidebar = ({
   watchedMovies,
   sidebarOpened,
   setSidebarOpened,
+  openModal,
 }) => {
   const [likedList, setLikedList] = useState([]);
   const [wathcedList, setWatchedList] = useState([]);
@@ -61,15 +62,57 @@ const Sidebar = ({
         </div>
         <div className="liked-movies">
           <h1>Liked Movies</h1>
-          {likedList.map((movie, index) => (
-            <p key={index}>{movie.title}</p>
-          ))}
+          <div className="sidebar-movies-list">
+            {likedList.map((movie, index) => (
+              <div
+                key={index}
+                className="sidebar-movie-item"
+                onClick={() => {
+                  setSidebarOpened(false);
+                  openModal(movie);
+                }}
+              >
+                <img
+                  src={
+                    movie?.poster_path
+                      ? `https://image.tmdb.org/t/p/w500/${movie.poster_path}`
+                      : "https://placehold.co/260x390?text=No+Cover+Art&font=montserrat"
+                  }
+                  className="sidebar-movie-item-image"
+                  alt="Movie Cover Art"
+                />
+
+                <p className="sidebar-movie-title">{movie.title}</p>
+              </div>
+            ))}
+          </div>
         </div>
         <div className="watched-movies">
           <h1>Watched Movies</h1>
-          {wathcedList.map((movie, index) => (
-            <p key={index}>{movie.title}</p>
-          ))}
+          <div className="sidebar-movies-list">
+            {wathcedList.map((movie, index) => (
+              <div
+                key={index}
+                className="sidebar-movie-item"
+                onClick={() => {
+                  setSidebarOpened(false);
+                  openModal(movie);
+                }}
+              >
+                <img
+                  src={
+                    movie?.poster_path
+                      ? `https://image.tmdb.org/t/p/w500/${movie.poster_path}`
+                      : "https://placehold.co/260x390?text=No+Cover+Art&font=montserrat"
+                  }
+                  className="sidebar-movie-item-image"
+                  alt="Movie Cover Art"
+                />
+
+                <p className="sidebar-movie-title">{movie.title}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>

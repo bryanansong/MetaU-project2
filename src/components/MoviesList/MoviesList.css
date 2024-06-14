@@ -19,3 +19,7 @@
   color: white;
   /* width: 100px; */
 }
+
+.loadMore:hover {
+  cursor: pointer;
+}

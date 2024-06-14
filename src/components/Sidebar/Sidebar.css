@@ -15,7 +15,7 @@
 }
 
 .container-opened {
-  backdrop-filter: blur(5px);
+  backdrop-filter: blur(10px);
   background-color: rgb(0, 0, 0, 0.5);
   transition: backdrop-filter 0s ease;
 }
@@ -75,9 +75,57 @@
   flex: 1;
 }
 
-.liked-movies {
-  /* background-color: purple; */
+.liked-movies > h1,
+.watched-movies > h1 {
+  color: white;
+  font-weight: 200;
+  letter-spacing: 5px;
+  margin: 0;
+  background-color: #015cb1;
+  display: flex;
+  justify-content: center;
+  border-top: 5px solid #0272dc;
+  border-bottom: 5px solid #0272dc;
 }
-.watched-movies {
-  /* background-color: green; */
+
+.sidebar-movies-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.sidebar-movie-item {
+  display: flex;
+  overflow: hidden;
+  border-radius: 8px;
+  margin: 5px 20px;
+  width: 200px;
+  color: white;
+  background-color: #0272dc;
+  border: 3px solid #0272dc;
+}
+.sidebar-movie-item {
+  cursor: pointer;
+}
+
+.sidebar-movie-item-image {
+  width: 70px;
+  border-right: 3px solid #0272dc;
+}
+
+.sidebar-movie-title {
+  font-weight: 600;
+  width: 100%;
+  letter-spacing: 1px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+
+@media (max-width: 600px) {
+  .sidebar-content {
+    width: 100vw;
+  }
 }

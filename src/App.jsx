@@ -45,6 +45,8 @@ const App = () => {
         watchedMovies={watchedMovies}
         sidebarOpened={sidebarOpened}
         setSidebarOpened={setSidebarOpened}
+        setModalData={setModalData}
+        openModal={openModal}
       />
       {isModalVisible && (
         <Modal

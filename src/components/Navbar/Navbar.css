@@ -10,7 +10,7 @@
   align-items: center;
   justify-content: space-around;
   color: white;
-  padding: 10px 60px 10px 60px;
+  padding: 0px 10px 0px 20px;
 }
 
 .navbar > * {
@@ -20,6 +20,7 @@
 .navbar-title {
   display: flex;
   justify-content: center;
+  font-size: 3rem;
 }
 
 .button-section {
