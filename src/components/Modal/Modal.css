@@ -40,8 +40,6 @@
   z-index: 4;
   left: 20px;
   gap: 10px;
-
-  /* STYLES FOR POSITIONING BUTTON */
   display: flex;
   flex-direction: column;
   width: 300px;
@@ -62,12 +60,11 @@
 }
 .modal-toggle-watch-btn {
   background-color: rgb(216, 189, 57);
-  /* margin-top: 2px; */
+  border-radius: 8px;
   width: 70%;
   display: flex;
   justify-content: center;
   border: 2px rgba(0, 0, 0, 0) solid;
-  /* max-height: 30px; */
 }
 
 .watched {
@@ -77,8 +74,8 @@
 }
 
 .modal-toggle-like-btn {
-  background-color: #ac3030;
-  /* margin-top: 2px; */
+  background-color: #e42222;
+  border-radius: 8px;
   width: 70%;
   display: flex;
   justify-content: center;
@@ -90,6 +87,16 @@
   background-color: rgba(0, 0, 0, 0);
   border: 2px #ac3030 solid;
   color: #ac3030;
+}
+
+.modal-toggle-like-btn p,
+.modal-toggle-watch-btn p {
+  font-weight: 700;
+}
+
+.modal-toggle-like-btn:hover,
+.modal-toggle-watch-btn:hover {
+  cursor: pointer;
 }
 
 .modal-movie-content {

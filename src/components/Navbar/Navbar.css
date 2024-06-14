@@ -39,14 +39,19 @@
 }
 
 .toggle-button:hover {
-  box-shadow: 0px 0px 0px 5px #61a4e3 inset;
+  box-shadow: 0px 0px 0px 3px #61a4e3 inset;
   background-color: #0084ff71;
   padding: 8px 25px;
   cursor: pointer;
 }
 
 .burger-icon-container {
-  display: block;
+  display: flex;
+  justify-content: center;
+}
+
+.burger-icon-container:hover {
+  cursor: pointer;
 }
 
 .burger-icon {

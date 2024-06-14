@@ -13,7 +13,7 @@ const App = () => {
   const [modalData, setModalData] = useState({});
   const [likedMovies, setLikedMovies] = useState([]);
   const [watchedMovies, setWatchedMovies] = useState([]);
-  const [sidebarOpened, setSidebarOpened] = useState(true);
+  const [sidebarOpened, setSidebarOpened] = useState(false);
 
   const openModal = (movieInformation) => {
     setIsModaVisible(true);
