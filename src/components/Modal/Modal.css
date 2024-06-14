@@ -17,10 +17,9 @@
   width: 65vw;
   height: 70vh;
   border-radius: 7px;
-  background-color: black;
+  background-color: #3667c9;
   overflow: hidden;
   overflow-y: scroll;
-  border: 3px white solid;
 }
 
 .modal-movie-background {
@@ -48,11 +47,11 @@
 }
 
 .modal-movie-cover > img {
-  border-radius: 4px;
+  border-radius: 8px;
   width: 100%;
   height: auto;
   top: -470px;
-  border: 3px white solid;
+  border: 5px solid #3667c9;
 }
 
 .modal-watched-buttons > *:hover {
@@ -80,18 +79,19 @@
   display: flex;
   justify-content: center;
   border: 2px rgba(0, 0, 0, 0) solid;
-  /* max-height: 30px; */
 }
 
 .liked {
   background-color: rgba(0, 0, 0, 0);
-  border: 2px #ac3030 solid;
-  color: #ac3030;
+  border: 2px #e42222 solid;
+  color: #e42222;
 }
 
 .modal-toggle-like-btn p,
 .modal-toggle-watch-btn p {
   font-weight: 700;
+  margin: 0;
+  padding: 7px;
 }
 
 .modal-toggle-like-btn:hover,
@@ -103,19 +103,31 @@
   position: absolute;
   z-index: 3;
   bottom: 0;
-  height: 60%;
+  height: 50%;
   padding: 0px 30px 10px 340px;
-  border-top: 3px white solid;
-  background-color: black;
+  background-color: #3667c9;
   color: white;
   width: fit-content;
+  text-align: justify;
+}
+
+.modal-movie-content > p:first-of-type {
+  margin: 0px;
+  padding: 0px;
+  color: rgba(255, 255, 255, 0.517);
+  margin-bottom: 5px;
+}
+
+.modal-movie-content > p:nth-of-type(2) {
+  margin: 0;
+  margin: 10px 0px;
 }
 
 .modal-movie-title {
-  font-size: 3rem;
+  font-size: 4rem;
+  margin: 3px;
   font-weight: 200;
   letter-spacing: 2px;
-  max-width: 75%;
 }
 
 .modal-movie-overview {
@@ -126,4 +138,17 @@
   width: 720px;
   height: 405px;
   margin-bottom: 30px;
+  border-radius: 8px;
+  border: none;
+}
+
+@media (max-width: 1650px) {
+  .modal-movie-trailer {
+    width: 544px;
+    height: 306px;
+  }
+
+  .modal-movie-overview {
+    width: 90%;
+  }
 }

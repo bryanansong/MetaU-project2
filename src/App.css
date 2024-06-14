@@ -16,18 +16,3 @@
   padding-top: 80px;
   background-color: #e0e0e0;
 }
-
-@media (max-width: 600px) {
-  .movie-card {
-    width: 100%;
-  }
-
-  .search-bar {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .search-bar form {
-    flex-direction: column;
-  }
-}

@@ -130,7 +130,7 @@ const Modal = ({
         <div className="modal-movie-content">
           <h1 className="modal-movie-title">{movie.title}</h1>
           <p>Genre: movie.genre | Release Date: {movie.release_date}</p>
-          <h3>Description:</h3>
+          <h3 style={{ margin: "0px", padding: "0px" }}>Overview:</h3>
           <p className="modal-movie-overview">{movie.overview}</p>
           {trailerUrl ? (
             <iframe
