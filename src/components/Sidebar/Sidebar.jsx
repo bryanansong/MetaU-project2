@@ -54,6 +54,11 @@ const Sidebar = ({
         className={`sidebar-content ${sidebarOpened ? "content-opened" : ""}`}
         onClick={(e) => e.stopPropagation()}
       >
+        <div className="sidebar-close" onClick={() => setSidebarOpened(false)}>
+          <div className="sidebar-close-button">
+            <p>Close Sidebar</p>
+          </div>
+        </div>
         <div className="liked-movies">
           <h1>Liked Movies</h1>
           {likedList.map((movie, index) => (
