@@ -6,6 +6,8 @@ Submitted by: **Bryan Ansong**
 
 Estimated time spent: **20** hours spent in total
 
+Video of features: [Loom Link](https://www.loom.com/share/9c84db07b4f44e78807bb6870eddc92d?sid=542d06f3-15a1-4fc5-830c-4c57b548d226)
+
 Deployed Application (optional): [Flixster Deployed Site](https://flixster-qawi.onrender.com/)
 
 ### Application Features
