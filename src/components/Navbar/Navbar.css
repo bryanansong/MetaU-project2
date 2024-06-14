@@ -1,6 +1,7 @@
 .navbar {
   position: fixed;
   top: 0;
+  z-index: 1;
   width: 100%;
   background-color: #3667c9;
   display: flex;
@@ -27,10 +28,9 @@
 }
 
 .toggle-button {
-  background-color: green;
+  background-color: #0085ff;
   padding: 8px 25px;
   border-radius: 9px;
-  /* min-width: 140px; */
   width: 200px;
   display: flex;
   justify-content: center;
@@ -38,9 +38,9 @@
 }
 
 .toggle-button:hover {
-  background-color: green;
+  border: 5px solid #006dd2;
+  background-color: #359af971;
   padding: 8px 25px;
-  border-radius: 9px;
   cursor: pointer;
 }
 

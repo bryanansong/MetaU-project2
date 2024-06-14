@@ -1,5 +1,5 @@
 .modal-container {
-  z-index: 1;
+  z-index: 2;
   position: fixed;
   top: 0;
   left: 0;
@@ -112,7 +112,7 @@
 }
 
 .modal-movie-overview {
-  /* background-color: red; */
+  color: white;
 }
 
 .modal-movie-trailer {

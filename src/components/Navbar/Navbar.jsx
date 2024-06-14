@@ -39,7 +39,7 @@ const Navbar = ({ isSearching, setIsSearching, setSidebarOpened }) => {
           </g>
         </svg>
       </div>
-      <h1 className="navbar-title">Flixster</h1>
+      <h1 className="navbar-title">🎬 Flixster</h1>
       <div className="button-section">
         {isSearching ? (
           <div className="toggle-button" onClick={() => setIsSearching(false)}>
